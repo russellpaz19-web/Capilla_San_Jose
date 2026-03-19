@@ -1,0 +1,73 @@
+body { margin: 0; font-family: 'Times New Roman', serif; }
+
+.topbar { background: #e6e6e6; padding: 15px 40px; position: relative; }
+.topbar-contenido { display: flex; justify-content: space-between; align-items: center; }
+.topbar h1 { margin: 0; font-size: 28px; }
+.light { font-style: italic; font-weight: normal; }
+.derecha .icono { margin-left: 15px; font-size: 22px; }
+
+.logo-medallon {
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 2000;
+}
+.logo-medallon img { width: 70%; object-fit: contain; filter: sepia(1) saturate(6) hue-rotate(10deg) brightness(0.9); }
+
+.hero { position: relative; background: #8fa3b0; height: 520px; overflow: hidden; }
+.hero-texto { position: absolute; left: 80px; top: 180px; }
+.hero-texto h2 { font-size: 110px; color: #C9A646; margin: 0; }
+.hero-imagen { position: absolute; right: 0; bottom: 0; }
+.hero-imagen img { height: 520px; }
+
+/* SACRAMENTOS */
+.sacramentos { padding: 50px 20px; background: #f8f8f8; }
+.sacramento-contenedor { display: flex; justify-content: center; align-items: center; max-width: 1000px; margin:auto; gap: 20px; }
+.sacramento { flex: 1; text-align: center; }
+.linea-vertical { width: 2px; background:#ccc; height: 50px; }
+.linea-gruesa { height: 5px; margin-top: 10px; border-radius: 2px; }
+.linea-gruesa.azul { background: #1E90FF; }
+.linea-gruesa.amarillo { background: #FFD700; }
+.linea-gruesa.naranja { background: #FF8C00; }
+
+.calendario { background: #f8f8f8; padding: 80px 20px; text-align: center; }
+.calendario-contenedor { display: flex; align-items: stretch; justify-content: center; gap: 30px; max-width: 1000px; margin: auto; height: 450px; }
+.calendario-imagen { flex: 1; display: flex; }
+.calendario-imagen img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+.calendario-box { flex: 1; display: flex; flex-direction: column; }
+
+.titulo-seccion { font-size: 40px; margin-bottom: 20px; }
+.nav-mes { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.nav-mes button { background: #C9A646; border: none; color: white; padding: 6px 12px; cursor: pointer; border-radius: 6px; }
+
+.dias-semana { display: grid; grid-template-columns: repeat(7,1fr); font-weight: bold; }
+.dias { display: grid; grid-template-columns: repeat(7,1fr); gap:5px; margin-top:10px; }
+.dia { position: relative; padding: 10px; border-radius: 6px; }
+.domingo { background:#C9A646; color:white; }
+.festivo { border: 2px solid #C9A646; }
+
+.tooltip { position: absolute; bottom: 120%; left:50%; transform: translateX(-50%); background:#333; color:white; padding:6px 10px; border-radius:6px; font-size:12px; opacity:0; pointer-events:none; transition:0.3s; white-space:nowrap; z-index:10; }
+.tooltip::after { content:""; position:absolute; top:100%; left:50%; transform:translateX(-50%); border-width:5px; border-style:solid; border-color:#333 transparent transparent transparent; }
+.dia:hover .tooltip { opacity:1; }
+
+@media(max-width:900px){
+    .calendario-contenedor, .sacramento-contenedor { flex-direction: column; align-items: center; height:auto; }
+    .calendario-imagen img { width:90%; height:auto; margin-bottom:20px; object-fit:contain; }
+    .calendario-box { width:90%; height:auto; }
+    .linea-vertical { display:none; }
+}
+@media(max-width:600px){
+    .tooltip { white-space: normal; font-size:11px; bottom:auto; top:110%; }
+    .hero-texto h2 { font-size:60px; }
+}
+
+footer { background:#e6e6e6; padding:15px; text-align:center; }
